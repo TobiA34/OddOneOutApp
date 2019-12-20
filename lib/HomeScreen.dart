@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:odd_one_out/InputScreen.dart';
+import 'package:odd_one_out/TutorialScreen.dart';
 
 var inputScreen = new InputScreen();
 
@@ -61,7 +62,11 @@ class HomeScreen extends StatelessWidget {
                               minWidth: 150.0,
                               height: 50.0,
                               child: RaisedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                                    return TutorialScreen();
+                                  }));
+                                },
                                 child: Text("Tutorial"),
                               )),
                         ),
