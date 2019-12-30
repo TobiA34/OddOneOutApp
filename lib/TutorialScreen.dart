@@ -110,7 +110,7 @@ class TutorialScreen extends StatelessWidget {
               margin: EdgeInsets.only(top: 50.0,left: 35.0),
               child: new ListTile(
                 leading: new MyBullet(),
-                title: new Text('The player with the most points when the game',style: TextStyle(color:Colors.black,fontSize: 18.0,fontWeight: FontWeight.bold),),
+                title: new Text('The player with the most points wins the game.',style: TextStyle(color:Colors.black,fontSize: 18.0,fontWeight: FontWeight.bold),),
               ),
             ),
 

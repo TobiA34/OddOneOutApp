@@ -2,18 +2,47 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:odd_one_out/CatagoryScreen.dart';
 
 class InputScreen extends StatelessWidget {
   @override
 
-  List<String> formInput = [];
-  TextEditingController emailController = new TextEditingController();
-   var _formKey = GlobalKey<FormState>();
 
+//  List<TextEditingController> formInput = [];
+ final list = new  List<TextEditingController>();
 
-  void saveInput(){
-    formInput.add(emailController.text);
+  TextEditingController nameInput1 = new TextEditingController();
+  TextEditingController nameInput2 = new TextEditingController();
+  TextEditingController nameInput3 = new TextEditingController();
+  TextEditingController nameInput4 = new TextEditingController();
+  TextEditingController nameInput5 = new TextEditingController();
+  TextEditingController nameInput6 = new TextEditingController();
+
+void saveInput(){
+
+  list.add(nameInput1);
+  list.add(nameInput2);
+  list.add(nameInput3);
+  list.add(nameInput4);
+  list.add(nameInput5);
+  list.add(nameInput6);
+
+}
+
+  void clearInput(){
+    nameInput1.clear();
+    nameInput2.clear();
+    nameInput3.clear();
+    nameInput4.clear();
+    nameInput5.clear();
+    nameInput6.clear();
   }
+
+
+
+
+  var _formKey = GlobalKey<FormState>();
+
 
 
 
@@ -37,16 +66,7 @@ class InputScreen extends StatelessWidget {
 
 
               new TextFormField(
-                controller: emailController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "You need to add a name";
-                  }
-
-                  if(value.length < 2){
-                    return "Name must have more than one character";
-                  }
-                },
+                controller: nameInput1,
                 decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                       borderRadius: const BorderRadius.all(
@@ -62,7 +82,25 @@ class InputScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new TextFormField(
-                  controller: emailController,
+                  controller: nameInput2,
+                  decoration: new InputDecoration(
+                      border: new OutlineInputBorder(
+                        borderRadius: const BorderRadius.all(
+                          const Radius.circular(20.0),
+                        ),
+                      ),
+                      filled: true,
+                      hintStyle: new TextStyle(color: Colors.grey[800]),
+                      hintText: "Your Name",
+                      fillColor: Colors.amber[100]),
+                ),
+
+              ),
+
+              Container(
+                margin: EdgeInsets.only(top: 30.0),
+                child: new TextFormField(
+                  controller: nameInput3,
                   decoration: new InputDecoration(
                       border: new OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
@@ -79,7 +117,7 @@ class InputScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new TextFormField(
-                  controller: emailController,
+                  controller: nameInput4,
                   decoration: new InputDecoration(
                       border: new OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
@@ -96,7 +134,7 @@ class InputScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new TextFormField(
-                  controller: emailController,
+                  controller: nameInput5,
                   decoration: new InputDecoration(
                       border: new OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
@@ -113,24 +151,7 @@ class InputScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 30.0),
                 child: new TextFormField(
-                  controller: emailController,
-                  decoration: new InputDecoration(
-                      border: new OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(20.0),
-                        ),
-                      ),
-                      filled: true,
-                      hintStyle: new TextStyle(color: Colors.grey[800]),
-                      hintText: "Your Name",
-                      fillColor: Colors.amber[100]),
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.only(top: 30.0),
-                child: new TextFormField(
-                  controller: emailController,
+                  controller: nameInput6,
                   decoration: new InputDecoration(
                       border: new OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
@@ -153,13 +174,12 @@ class InputScreen extends StatelessWidget {
                   textColor: Colors.white,
                   padding: EdgeInsets.all(8.0),
                   onPressed: () {
-                    _formKey.currentState.validate();
-                    Scaffold.of(context)
-                    .showSnackBar(
-                      SnackBar(
-                        content: Text("This is vailid"),
-                      )
-                    );
+                    saveInput();
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return CatagoryScreen();
+                    }));
+                  print(list);
+
                   },
                   child: Text(
                     "Save".toUpperCase(),
@@ -169,6 +189,27 @@ class InputScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+              Container(
+                margin: EdgeInsets.only(top: 40.0),
+                child: FlatButton(
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(18.0)),
+                  color: Colors.black,
+                  textColor: Colors.white,
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    clearInput();
+                  },
+                  child: Text(
+                    "clear".toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                ),
+              ),
+
 
             ],
 
