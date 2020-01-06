@@ -49,12 +49,13 @@ void saveInput(){
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[600],
-        drawer: Drawer(
-        ),
+//        drawer: Drawer(
+//        ),
         appBar: AppBar(
           title: Text("Input Screen", style: TextStyle(color: Colors.black),),
           backgroundColor: Colors.amber[100],
           centerTitle: true,
+          automaticallyImplyLeading: false,
           iconTheme: new IconThemeData(color: Colors.black),
         ),
 
@@ -178,7 +179,7 @@ void saveInput(){
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return CatagoryScreen();
                     }));
-                  print(list);
+                  print(list.length);
 
                   },
                   child: Text(

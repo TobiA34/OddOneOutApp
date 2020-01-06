@@ -1,8 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:odd_one_out/CatagoryScreen.dart';
 
 class GameIntroScreen extends StatelessWidget {
+
+  var catagoryScreen =  CatagoryScreen();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,8 +64,11 @@ What game genre is your favourite and why?
                               color: Colors.yellow[200],
                               textColor: Colors.black,
                               child: new Text("Back"),
-                              onPressed: () => {},
-                              shape: RoundedRectangleBorder(
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return CatagoryScreen();
+                                }));
+                              },                              shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(27.0)
                               ),
                             ),

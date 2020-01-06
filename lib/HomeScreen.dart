@@ -12,13 +12,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: Colors.grey[600],
-        drawer: Drawer(
-        ),
+//        drawer: Drawer(
+//        ),
         appBar: AppBar(
           title: Text("Odd One Out", style: TextStyle(color: Colors.black),),
           backgroundColor: Colors.amber[100],
           centerTitle: true,
-        ),
+          automaticallyImplyLeading: false,
+         ),
         body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

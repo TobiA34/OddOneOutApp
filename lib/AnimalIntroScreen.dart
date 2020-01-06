@@ -2,8 +2,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:odd_one_out/CatagoryScreen.dart';
 
 class AnimalIntroScreen extends StatelessWidget {
+
+  var catagoryScreen = CatagoryScreen();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +63,11 @@ class AnimalIntroScreen extends StatelessWidget {
                               color: Colors.yellow[200],
                               textColor: Colors.black,
                               child: new Text("Back"),
-                              onPressed: () => {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return CatagoryScreen();
+                                }));
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(27.0)
                               ),
