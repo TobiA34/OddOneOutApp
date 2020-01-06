@@ -12,10 +12,9 @@ class AnimalIntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[600],
-        drawer: Drawer(
-        ),
         appBar: AppBar(
-          title: Text("Animal", style: TextStyle(color: Colors.black),),
+          automaticallyImplyLeading: false,
+          title: Text("Animal", style: TextStyle(fontSize: 40.0,color: Colors.black),),
           backgroundColor: Colors.amber[100],
           centerTitle: true,
           iconTheme: new IconThemeData(color: Colors.black),
@@ -30,7 +29,7 @@ class AnimalIntroScreen extends StatelessWidget {
                       new Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 0, 350),
                           child: Image(
-                            image: AssetImage("assets/lion.png"),
+                            image: AssetImage("assets/koala.png"),
                           )
                       ),
 

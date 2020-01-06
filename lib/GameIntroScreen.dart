@@ -13,7 +13,8 @@ class GameIntroScreen extends StatelessWidget {
         backgroundColor: Colors.grey[600],
 
         appBar: AppBar(
-          title: Text("Game", style: TextStyle(color: Colors.black),),
+          automaticallyImplyLeading: false,
+          title: Text("Game", style: TextStyle(fontSize: 40.0,color: Colors.black),),
           backgroundColor: Colors.amber[100],
           centerTitle: true,
           iconTheme: new IconThemeData(color: Colors.black),
@@ -28,7 +29,7 @@ class GameIntroScreen extends StatelessWidget {
                       new Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 30, 350),
                           child: Image(
-                            image: AssetImage("assets/gamepad.png"),
+                            image: AssetImage("assets/gamepad2.png"),
                           )
                       ),
 

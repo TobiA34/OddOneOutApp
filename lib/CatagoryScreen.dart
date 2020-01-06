@@ -14,7 +14,7 @@ var inputScreen = new InputScreen();
 //
 var screens = [AnimalIntroScreen(),ClothesIntroScreen(),FoodIntroScreen(),GameIntroScreen(),MusicIntroScreen(),MythologyIntroScreen()];
 var names = ["Animal","Clothes","Food","Game","Music","Mythology"];
-var images = ["assets/lion.png","assets/t-shirt.png","assets/pizza-slice.png","assets/gamepad.png","assets/music-player.png","assets/zeus.png" ];
+var images = ["assets/koala.png","assets/tshirt.png","assets/pizza-slice2.png","assets/gamepad2.png","assets/music-player.png","assets/zeus.png" ];
 //Orientation orientation;
 
 nextScreen(int index){
