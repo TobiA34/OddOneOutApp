@@ -44,10 +44,13 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.only(left: 40.0, right: 0,top: 400.0),
                         child: ButtonTheme(
-                            buttonColor: Colors.amberAccent[200],
+                            buttonColor: Colors.amberAccent[100],
                             minWidth: 150.0,
                         height: 50.0,
                         child: RaisedButton(
+                            shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(18.0)
+                        ),
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context){
                               return InputScreen();
@@ -57,12 +60,15 @@ class HomeScreen extends StatelessWidget {
                         )),
                       ),
                         Container(
-                          margin: const EdgeInsets.only(left: 60.0, right: 0,top: 400.0),
+                          margin: const EdgeInsets.only(left: 35.0, right: 0,top: 400.0),
                           child: ButtonTheme(
-                            buttonColor: Colors.amberAccent[200],
+                            buttonColor: Colors.amberAccent[100],
                               minWidth: 150.0,
                               height: 50.0,
                               child: RaisedButton(
+                                shape: new RoundedRectangleBorder(
+                                    borderRadius: new BorderRadius.circular(18.0)
+                                ),
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context){
                                     return TutorialScreen();

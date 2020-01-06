@@ -12,8 +12,7 @@ class MusicIntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey[600],
-        drawer: Drawer(
-        ),
+
         appBar: AppBar(
           title: Text("Music", style: TextStyle(color: Colors.black),),
           backgroundColor: Colors.amber[100],

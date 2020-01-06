@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:odd_one_out/HomeScreen.dart';
 
 
 
@@ -8,7 +9,7 @@ class TutorialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Colors.grey[500],
 //      drawer: Drawer(
 //      ),
       appBar: AppBar(
@@ -104,18 +105,57 @@ class TutorialScreen extends StatelessWidget {
 
             Container(
               margin: EdgeInsets.only(top: 50.0),
+
               child: Text("How to win", style: TextStyle(color:Colors.black,fontSize: 32.0,fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 50.0,left: 35.0),
+              height: 120.0,
+              width: 100.0,
+              decoration: new BoxDecoration(
+                image: DecorationImage(
+                  image: new AssetImage("assets/ranking.png"),
+                ),
+              ),
 
+            ),
             Container(
               margin: EdgeInsets.only(top: 50.0,left: 35.0),
               child: new ListTile(
+
                 leading: new MyBullet(),
                 title: new Text('The player with the most points wins the game.',style: TextStyle(color:Colors.black,fontSize: 18.0,fontWeight: FontWeight.bold),),
               ),
             ),
 
-    ],
+
+
+
+            Container(
+//              margin: EdgeInsets.fromLTRB(0, 500, 30, 0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FlatButton(
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(8.0)),
+                  color:  Colors.yellow[200],
+                  textColor: Colors.black,
+                  padding: EdgeInsets.all(8.0),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return HomeScreen();
+                    }));
+                  },
+                  child: Text(
+                    "back".toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                ),
+            ),
+
+            )],
         ),
       ),
     );
